@@ -1,0 +1,55 @@
+# Gamble
+gambling=True
+money=100
+while gambling:
+    from random import randint
+    print(' ')
+    print('Gamble!')
+    print('')
+    losing=True
+    
+    winnum=randint(1, 2)
+    while losing:
+        if money == 0:
+            print('You ran out of money.')
+            losing=False
+        print('Money=%d€' % money)
+        print('You're playing Gamble.')
+        print('You have to guess a number from 1-50')
+        print('Everytime you play, you lose 5€.')
+        print('If you win, the game ends. If you lose, you play again, until your money runs out.')
+        number=input ('Guess a number 1-50. Guess:')
+        guess=int(number)
+        if guess == winnum:
+            print('WIN!')
+            losing=False
+        if money == 5:
+            print('You ran out of money.')
+            losing=False
+        else:
+            if losing == True:
+                print('You lost.')
+                print('You play again.')
+                money=money-5
+    if guess==winnum:
+        winmoney=randint (1000, 10000)
+        print('You won %d!€' % voittoraha)
+        print('Your money was:%d€' % raha)
+        money=money+winmoney
+        print('Your money is now:%d€' % raha)
+        print('The winning number was %d' % winnum)
+        question=True
+        while question:
+            x=input('Do you want to continue with the money you have? Yes or No. Answer:')
+            if x == 'Yes':
+                print(' ')
+                gambling=True
+                question=False
+            if x == 'No':
+                print(' ')
+                print('Thanks for playing!')
+                gambling=False
+                Kysymys=False
+    else:
+        print('You lost. The winning number was %d' % winnum)
+        Lottoaminen=False
